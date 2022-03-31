@@ -27,3 +27,17 @@ E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\obj\Debug\net5.0\FilmesAPI.pdb
 E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\obj\Debug\net5.0\FilmesAPI.genruntimeconfig.cache
 E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\obj\Debug\net5.0\ref\FilmesAPI.dll
 E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\obj\Debug\net5.0\refint\FilmesAPI.dll
+E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\bin\Debug\net5.0\Humanizer.dll
+E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\bin\Debug\net5.0\MySql.Data.dll
+E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\bin\Debug\net5.0\MySql.Data.EntityFrameworkCore.dll
+E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\bin\Debug\net5.0\Newtonsoft.Json.dll
+E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\bin\Debug\net5.0\runtimes\win7-x64\native\sni.dll
+E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\bin\Debug\net5.0\runtimes\win7-x86\native\sni.dll
+E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\bin\Debug\net5.0\runtimes\unix\lib\netstandard1.3\System.Data.SqlClient.dll
+E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\bin\Debug\net5.0\runtimes\win\lib\netstandard1.3\System.Data.SqlClient.dll
