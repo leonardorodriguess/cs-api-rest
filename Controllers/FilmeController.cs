@@ -15,33 +15,29 @@ namespace FilmesAPI.Controllers
         private static int id = 1;
         private static List<Filme> filmes = new List<Filme>();
 
-        [HttpPost] //Verbo Post criar novo recurso no sistema
-        public void AdicionaFilme([FromBody] Filme filme) //[FromBody] vem do corpo da minha requisição
-        {
+        [HttpPost] 
+        public IActionResult AdicionaFilme([FromBody] Filme filme) 
+        { // Boa prática é retornar o caminho para ao recurso que está criando
             filme.Id = id ++;
             filmes.Add(filme);
-            WriteLine(filme.Titulo);
-
+            return CreatedAtAction(nameof(RecuperarFilmesPorId), new {Id = filme.Id}, filme);
         }
+
         [HttpGet]
-        //public List<Filme> RecuperarFilmes()
-        public IEnumerable<Filme> RecuperaFilmes()
-        {
-            return filmes;
+        public IActionResult RecuperaFilmes()
+        { //como o usuario n esta requerindo é uma boa prática retornar uma lista vazia
+            return Ok(filmes);
         }
 
         [HttpGet("{id}")]
-        public Filme RecuperarFilmesPorId(int id)
-        {
-            return filmes.FirstOrDefault(filme => filme.Id == id);
-            /*foreach(Filme filme in filmes)
+        public IActionResult RecuperarFilmesPorId(int id)
+        { //problema se por acaso o filme não for encontrado
+            var filme =  filmes.FirstOrDefault(filme => filme.Id == id);
+            if(filme != null)
             {
-                if(filme.Id == id)
-                {
-                    return filme;
-                }
+                return Ok(filme);
             }
-            return null;*/
+            return NotFound();
         }
     }
 }
