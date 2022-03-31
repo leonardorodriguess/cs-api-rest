@@ -26,4 +26,5 @@ E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\obj\Debug\net5.0\FilmesAPI.dll
 E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\obj\Debug\net5.0\FilmesAPI.pdb
 E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\obj\Debug\net5.0\FilmesAPI.genruntimeconfig.cache
 E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\obj\Debug\net5.0\ref\FilmesAPI.dll
+E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\bin\Debug\net5.0\FilmesAPI.StaticWebAssets.xml
 E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\obj\Debug\net5.0\refint\FilmesAPI.dll
