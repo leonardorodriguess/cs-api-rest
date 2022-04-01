@@ -34,7 +34,6 @@ E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\bin\Debug\net5.0\Microsoft.Entit
 E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
 E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\bin\Debug\net5.0\MySql.Data.dll
 E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
-E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\bin\Debug\net5.0\ref\FilmesAPI.dll
 E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\bin\Debug\net5.0\BouncyCastle.Crypto.dll
 E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\bin\Debug\net5.0\Google.Protobuf.dll
 E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\bin\Debug\net5.0\K4os.Compression.LZ4.dll
@@ -46,4 +45,5 @@ E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\bin\Debug\net5.0\MySql.EntityFra
 E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
 E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
 E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\obj\Debug\net5.0\staticwebassets\FilmesAPI.StaticWebAssets.xml
+E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\bin\Debug\net5.0\FilmesAPI.StaticWebAssets.xml
+E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\obj\Debug\net5.0\refint\FilmesAPI.dll
