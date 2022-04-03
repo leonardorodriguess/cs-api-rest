@@ -15,10 +15,10 @@ namespace FilmesAPI.Controllers
     [Route("[controller]")]
     public class FilmeController : ControllerBase
     {
-        private FilmeContext _context;
+        private AppDbContext _context;
         private IMapper _mapper;
 
-        public FilmeController(FilmeContext context, IMapper mapper)
+        public FilmeController(AppDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
@@ -67,7 +67,7 @@ namespace FilmesAPI.Controllers
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Delete (int id)
+        public IActionResult DeleteFilme (int id)
         {
             Filme filme = _context.Filmes.FirstOrDefault(filme => filme.Id == id);
             if (filme == null)
