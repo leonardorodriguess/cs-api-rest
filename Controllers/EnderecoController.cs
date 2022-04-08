@@ -1,7 +1,7 @@
 using System.Linq;
 using AutoMapper;
 using FilmesAPI.Data;
-using FilmesAPI.Data.Dtos.Endereco;
+using FilmesAPI.Data.Dtos;
 using FilmesAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -26,7 +26,7 @@ namespace FilmesAPI.Controllers
             Endereco endereco = _mapper.Map<Endereco>(enderecoDto);
             _context.Enderecos.Add(endereco);
             _context.SaveChanges();
-            return Ok(); //Boa pratica colocar o id depois de criar o metodo de retorna por id
+            return CreatedAtAction(nameof (RecuperaEnderecoPorId), new {Id = endereco.Id}, endereco); //Boa pratica colocar o id depois de criar o metodo de retorna por id
         }
 
         [HttpGet]
@@ -36,7 +36,7 @@ namespace FilmesAPI.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult RetornaEnderecoPorId(int id)
+        public IActionResult RecuperaEnderecoPorId(int id)
         {
             Endereco endereco = _context.Enderecos.FirstOrDefault(endereco => endereco.Id == id);
             if(endereco == null)

@@ -3,7 +3,6 @@ using System.Linq;
 using AutoMapper;
 using FilmesAPI.Data;
 using FilmesAPI.Data.Dtos;
-using FilmesAPI.Data.Dtos.Cinema;
 using FilmesAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -29,7 +28,7 @@ namespace FilmesAPI.Controllers
             Cinema cinema = _mapper.Map<Cinema>(cinemaDto);
             _context.Cinemas.Add(cinema);
             _context.SaveChanges();
-            return Ok(); //boa pratica retornar o número do id
+            return CreatedAtAction(nameof(RecuperaCinemaPorId), new {Id = cinema.Id}, cinema); //boa pratica retornar o número do id
         }
 
         [HttpGet]
