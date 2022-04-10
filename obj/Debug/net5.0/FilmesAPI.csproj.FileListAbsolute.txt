@@ -49,3 +49,5 @@ E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\bin\Debug\net5.0\AutoMapper.dll
 E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\bin\Debug\net5.0\ref\FilmesAPI.dll
 E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\obj\Debug\net5.0\staticwebassets\FilmesAPI.StaticWebAssets.xml
+E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\bin\Debug\net5.0\Castle.Core.dll
+E:\Projetos\alura\Asp dotnet\API Rest\FilmesAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Proxies.dll
