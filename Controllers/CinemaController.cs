@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
 using FilmesAPI.Data;
@@ -32,9 +33,25 @@ namespace FilmesAPI.Controllers
         }
 
         [HttpGet]
-        public  IActionResult  RecuperaCinema()
+        public  IActionResult  RecuperaCinema([FromQuery] string nomeDoFilme)
         {
-            return Ok(_context.Cinemas);
+            //List<Cinema> cinemas = _context.Cinemas.Where(cinemas => cinemas.Nome == nomeDoFilme).ToList();
+            List<Cinema> cinemas = _context.Cinemas.ToList();
+            if(cinemas == null)
+            {
+                return NotFound();
+            }
+            if(!string.IsNullOrEmpty(nomeDoFilme))
+            {
+                IEnumerable<Cinema> query = from cinema in cinemas
+                        where cinema.Sessoes.Any(sessao =>
+                        sessao.Filme.Titulo == nomeDoFilme)
+                        select cinema;
+
+                cinemas = query.ToList();
+            }
+            List<ReadCinemaDto> readDto = _mapper.Map<List<ReadCinemaDto>>(cinemas);
+            return Ok(readDto);
         }
 
         [HttpGet("{id}")]
