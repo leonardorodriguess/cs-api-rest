@@ -8,7 +8,7 @@ using FilmesAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using FluentResults;
 
-namespace FilmesApi.Services
+namespace FilmesAPI.Services
 {
     public class FilmeService
     {

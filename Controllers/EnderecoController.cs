@@ -1,8 +1,11 @@
+using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
 using FilmesAPI.Data;
 using FilmesAPI.Data.Dtos;
 using FilmesAPI.Models;
+using FilmesAPI.Services;
+using FluentResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FilmesAPI.Controllers
@@ -11,67 +14,49 @@ namespace FilmesAPI.Controllers
     [Route("[controller]")]
     public class EnderecoController : ControllerBase
     {
-        private AppDbContext _context;
-        private IMapper _mapper;
+        private EnderecoService _enderecoService;
 
-        public EnderecoController(AppDbContext context, IMapper mapper)
+        public EnderecoController(EnderecoService enderecoService)
         {
-            _context = context;
-            _mapper = mapper;
+            _enderecoService = enderecoService;
         }
 
         [HttpPost]
-        public IActionResult adicionaEndereco([FromBody] CreateEnderecoDto enderecoDto)
+        public IActionResult AdicionaEndereco([FromBody] CreateEnderecoDto enderecoDto)
         {
-            Endereco endereco = _mapper.Map<Endereco>(enderecoDto);
-            _context.Enderecos.Add(endereco);
-            _context.SaveChanges();
-            return CreatedAtAction(nameof (RecuperaEnderecoPorId), new {Id = endereco.Id}, endereco); //Boa pratica colocar o id depois de criar o metodo de retorna por id
+            ReadEnderecoDto readEndereco = _enderecoService.AdicionaEndereco(enderecoDto);
+            return CreatedAtAction(nameof (RecuperaEnderecoPorId), new {Id = readEndereco.Id}, readEndereco); //Boa pratica colocar o id depois de criar o metodo de retorna por id
         }
 
         [HttpGet]
         public IActionResult RecuperaEndereco()
         {
-            return Ok(_context.Enderecos);
+            List<ReadEnderecoDto> readEndereco = _enderecoService.RecuperaEndereco();
+            return Ok(readEndereco);
         }
 
         [HttpGet("{id}")]
         public IActionResult RecuperaEnderecoPorId(int id)
         {
-            Endereco endereco = _context.Enderecos.FirstOrDefault(endereco => endereco.Id == id);
-            if(endereco == null)
-            {
-                return NotFound();
-            }
-            ReadEnderecoDto enderecoDto = _mapper.Map<ReadEnderecoDto>(endereco);
-            return Ok(enderecoDto);
+            ReadEnderecoDto readEndereco = _enderecoService.RecuperaEnderecoPorId(id);
+            if(readEndereco == null) return NotFound();
+            return Ok(readEndereco);
         }
 
         [HttpPut("{id}")]
         public IActionResult AtualizaEndereco(int id, [FromBody] UpdateEnderecoDto enderecoDto)
         {
-            Endereco endereco = _context.Enderecos.FirstOrDefault(endereco => endereco.Id == id);
-            if(endereco == null)
-            {
-                return NotFound();
-            }
-            _mapper.Map(enderecoDto, endereco);
-            _context.SaveChanges();
+            Result resultado = _enderecoService.AtualizaEndereco(id, enderecoDto);
+            if(resultado.IsFailed) return NotFound();
             return NoContent();
         }
 
         [HttpDelete("{id}")]
-        public IActionResult DeleteEndereco(int id)
+        public IActionResult DeletaEndereco(int id)
         {
-            Endereco endereco = _context.Enderecos.FirstOrDefault(endereco => endereco.Id == id);
-            if(endereco == null)
-            {
-                return NotFound();
-            }
-            _context.Remove(endereco);
-            _context.SaveChanges();
+            Result resultado = _enderecoService.DeletaEndereco(id);
+            if(resultado.IsFailed) return NotFound();
             return NoContent();
-
         }
         
     }

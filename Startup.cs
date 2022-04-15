@@ -15,7 +15,7 @@ using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore.Proxies;
 
 using FilmesAPI.Data;
-using FilmesApi.Services;
+using FilmesAPI.Services;
 
 namespace FilmesAPI
 {
@@ -33,7 +33,11 @@ namespace FilmesAPI
         {
            // services.AddDbContext<AppDbContext>(opts => opts.UseMySQL(Configuration.GetConnectionString("FilmeConnection")));
             services.AddDbContext<AppDbContext>(opts => opts.UseLazyLoadingProxies().UseMySQL(Configuration.GetConnectionString("FilmeConnection")));
+            services.AddScoped<CinemaService, CinemaService>();
+            services.AddScoped<EnderecoService, EnderecoService>();
             services.AddScoped<FilmeService, FilmeService>();
+            services.AddScoped<GerenteService, GerenteService>();
+            services.AddScoped<SessaoService, SessaoService>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
